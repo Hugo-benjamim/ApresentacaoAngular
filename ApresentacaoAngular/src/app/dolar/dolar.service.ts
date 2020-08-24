@@ -11,7 +11,7 @@ export class DolarService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public obterDado(ano: string, mes: string, dia: string): Observable<Object> {
+  public obterDado(ano: string, mes: string, dia: string): Observable<object> {
     const dataConcatenada = ano + mes + dia;
     const linkFinal = `${this.link}start_date=${dataConcatenada}&end_date=${dataConcatenada}`;
 

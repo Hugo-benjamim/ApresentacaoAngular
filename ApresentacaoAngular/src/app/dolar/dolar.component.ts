@@ -19,22 +19,21 @@ export class DolarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar(dataDesejada: string) {
+  buscar(dataDesejada: string): void {
     this.data = dataDesejada;
     const dataArray = dataDesejada.split('/');
     console.log(dataArray);
 
-    const observer = this.dolarService.obterDado(dataArray[2],dataArray[1],dataArray[0]);
-    
+    const observer = this.dolarService.obterDado(dataArray[2], dataArray[1], dataArray[0]);
+
     observer.subscribe(
       (dolar: IDolar[]) => this.retorno = dolar,
       (err) => console.error(err),
       () => this.valorResultado = this.retorno[0].ask
       );
-    
-    console.log(this.retorno[0]);
+
   }
-  obterData() {
+  obterData(): string{
     return this.data;
   }
 
