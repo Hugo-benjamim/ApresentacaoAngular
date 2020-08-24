@@ -1,0 +1,11 @@
+
+<label>Insira uma data para consultar o valor do dólar</label>    
+<input #dataDesejada placeholder="data desejada" value="20/08/2020">
+
+<button (click)="buscar(dataDesejada.value)">buscar</button>
+<input [(ngModel)]="dataDiferente" placeholder="data Final">
+
+<p innerHTML="{{data}}"></p>
+<p [innerHTML]="obterData()"></p>
+<p>{{dataDiferente}}</p>
+<p>{{valorResultado}}</p>
